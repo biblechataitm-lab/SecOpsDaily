@@ -543,3 +543,381 @@ a {
   flex-wrap: wrap;
   gap: var(--spacing-sm);
 }
+
+/* ==========================================================================
+   SecOpsDaily Threat Defense & Radar Scanner Hero
+   ========================================================================== */
+.secops-hero {
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-xl) 0 var(--spacing-lg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.secops-hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+@media (max-width: 960px) {
+  .secops-hero-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+}
+
+.secops-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background-color: var(--badge-bg);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  border-radius: 4px;
+  margin-bottom: var(--spacing-md);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--badge-text);
+}
+
+.secops-radar-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #ef4444;
+  box-shadow: 0 0 8px #ef4444;
+}
+
+.secops-title {
+  font-size: clamp(26px, 3vw, 40px);
+  line-height: 1.2;
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-ink);
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.secops-gradient-text {
+  color: #ef4444;
+  text-shadow: 0 0 16px rgba(239, 68, 68, 0.4);
+}
+
+.secops-lead {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: var(--spacing-lg);
+  max-width: 520px;
+}
+
+.secops-search-box {
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-main);
+  padding: 4px 6px 4px 14px;
+  margin-bottom: var(--spacing-md);
+  transition: all 0.15s ease;
+}
+
+.secops-search-box:focus-within {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+}
+
+.secops-search-icon {
+  color: #ef4444;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.secops-search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--text-ink);
+  outline: none;
+}
+
+.secops-search-btn {
+  background-color: #ef4444;
+  color: #ffffff;
+  border: none;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.secops-search-btn:hover {
+  background-color: var(--color-primary-active);
+}
+
+.secops-tags-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.secops-tags-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.secops-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.secops-tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--text-body);
+  background-color: #0b1120;
+  border: 1px solid var(--border-color);
+  padding: 4px 10px;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+.secops-tag-pill:hover {
+  background-color: #151e32;
+  border-color: #ef4444;
+  color: #f87171;
+}
+
+.secops-metrics-strip {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding-top: var(--spacing-sm);
+}
+
+.secops-metric-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.secops-metric-val {
+  font-family: var(--font-mono);
+  font-size: 17px;
+  font-weight: 700;
+  color: #ef4444;
+}
+
+.secops-metric-desc {
+  font-size: 10.5px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.secops-metric-divider {
+  width: 1px;
+  height: 24px;
+  background-color: var(--border-color);
+}
+
+/* Defense Card */
+.secops-defense-card {
+  background: linear-gradient(180deg, #0f1629 0%, #080c16 100%);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 10px;
+  padding: var(--spacing-lg);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.7);
+}
+
+.defense-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.defense-title-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.defense-radar-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ef4444;
+  box-shadow: 0 0 10px #ef4444;
+}
+
+.defense-header-title {
+  font-family: var(--font-display);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-ink);
+  letter-spacing: 0.5px;
+}
+
+.defense-status-pill {
+  font-size: 10.5px;
+  font-family: var(--font-mono);
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.defense-tabs-row {
+  display: flex;
+  gap: 6px;
+  background-color: rgba(5, 8, 17, 0.8);
+  padding: 4px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.defense-tab-btn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 6px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.defense-tab-btn.active {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.defense-telemetry-box {
+  background-color: rgba(21, 30, 50, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+}
+
+.telemetry-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.telemetry-title {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #f1f5f9;
+}
+
+.telemetry-score-tag {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: #34d399;
+}
+
+.telemetry-coverage {
+  font-size: 11px;
+  color: var(--text-muted);
+  display: block;
+}
+
+.defense-cve-stream {
+  background-color: #03050a;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.cve-stream-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 3px;
+}
+
+.cve-stream-title {
+  font-size: 9.5px;
+  font-family: var(--font-mono);
+  color: #f87171;
+  letter-spacing: 0.5px;
+}
+
+.cve-status-ok {
+  font-size: 9.5px;
+  font-family: var(--font-mono);
+  color: #34d399;
+}
+
+.cve-stream-body {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cve-code-text {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #94a3b8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.defense-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 4px;
+}
+
+.defense-compliance-note {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.defense-submit-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #f87171;
+  font-size: 12px;
+  font-weight: 600;
+  transition: opacity 0.15s ease;
+}
+
+.defense-submit-link:hover {
+  opacity: 0.85;
+}
+
