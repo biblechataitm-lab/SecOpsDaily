@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import { getProducts } from '@/lib/ads';
 import { HeroSection } from '@/components/HeroSection';
+import { LandingSections } from '@/components/LandingSections';
 import { CategoryChips } from '@/components/CategoryChips';
 import { ProductListWithPagination } from '@/components/ProductListWithPagination';
 import { Sidebar } from '@/components/Sidebar';
@@ -42,8 +43,10 @@ export default function HomePage() {
           <Sidebar />
         </Suspense>
       </div>
+      <LandingSections />
     </div>
   );
 }
+
 
 
