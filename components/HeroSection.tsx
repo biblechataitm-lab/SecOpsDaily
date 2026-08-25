@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { ShieldAlert, ShieldCheck, Lock, AlertTriangle, Eye, Terminal, Search, ArrowUpRight, Radio, Bug } from 'lucide-react';
+import { ShieldAlert, ShieldCheck, Lock, AlertTriangle, Eye, Terminal, Search, ArrowRight, ArrowUpRight, Radio, Bug, Star, Users } from 'lucide-react';
 
 const SECURITY_VECTORS = [
   {
@@ -39,12 +39,15 @@ export function HeroSection() {
 
   return (
     <section className="secops-hero">
+      <div className="secops-ambient-glow" />
+
       <div className="secops-hero-grid">
         {/* Left: Tactical Security Value Prop */}
         <div className="secops-hero-content">
           <div className="secops-badge">
             <span className="secops-radar-dot" />
             <span>Zero-Trust SecOps & Threat Intelligence • 2026</span>
+            <span className="secops-badge-pill">ENFORCED</span>
           </div>
 
           <h1 className="secops-title">
@@ -77,6 +80,35 @@ export function HeroSection() {
               Scan Threat DB
             </button>
           </form>
+
+          {/* Dual Action CTAs */}
+          <div className="secops-cta-row">
+            <Link href="/category/security" className="secops-primary-btn">
+              Scan 1,240+ Security Stacks <ArrowRight size={15} />
+            </Link>
+            <Link href="/submit" className="secops-secondary-btn">
+              Submit SecOps Tool
+            </Link>
+          </div>
+
+          {/* Social Proof */}
+          <div className="secops-social-proof">
+            <div className="secops-avatar-stack">
+              <span className="sec-avatar av-1">🛡️</span>
+              <span className="sec-avatar av-2">🔒</span>
+              <span className="sec-avatar av-3">🚨</span>
+              <span className="sec-avatar av-4">⚡</span>
+            </div>
+            <div className="secops-proof-text">
+              <div className="secops-proof-stars">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={12} className="fill-red-400 text-red-400" />
+                ))}
+                <span className="secops-rating">4.9/5.0</span>
+              </div>
+              <span className="secops-subtext">Hardened by 38,000+ CISOs & security researchers</span>
+            </div>
+          </div>
 
           {/* Security Domain Pills */}
           <div className="secops-tags-row">
