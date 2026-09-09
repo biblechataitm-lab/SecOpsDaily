@@ -1,52 +1,42 @@
 'use client';
 
-import React from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import React, { useEffect, useState } from 'react';
 
 const CATEGORIES = [
-  {
-    "label": "All",
-    "path": "/"
-  },
-  {
-    "label": "Threat Intel & SIEM",
-    "path": "/category/threat-intel"
-  },
-  {
-    "label": "Zero Trust & IAM",
-    "path": "/category/iam"
-  },
-  {
-    "label": "Vulnerability Scanning",
-    "path": "/category/scanning"
-  },
-  {
-    "label": "DevSecOps & SAST",
-    "path": "/category/devsecops"
-  }
+  { label: 'All', path: '/' },
+  { label: 'AI & ML', path: '/category/ai' },
+  { label: 'Developer Tools', path: '/category/developer-tools' },
+  { label: 'Productivity', path: '/category/productivity' },
+  { label: 'Search & Data', path: '/category/search-data' },
+  { label: 'Automation', path: '/category/automation' },
+  { label: 'Design & Media', path: '/category/design' },
 ];
 
 export function CategoryChips({ activeCategory }: { activeCategory?: string }) {
-  const pathname = usePathname();
+  const [currentPath, setCurrentPath] = useState('');
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setCurrentPath(window.location.pathname);
+    }
+  }, []);
 
   return (
     <div className="category-chips-wrapper">
       <div className="category-chips-list">
         {CATEGORIES.map((cat) => {
-          const isActive =
-            activeCategory
-              ? cat.path.toLowerCase() === `/category/${activeCategory.toLowerCase()}`
-              : pathname === cat.path;
+          const isActive = activeCategory
+            ? cat.path.toLowerCase() === `/category/${activeCategory.toLowerCase()}`
+            : currentPath === cat.path || (cat.path === '/' && (currentPath === '' || currentPath === '/'));
 
           return (
-            <Link
+            <a
               key={cat.path}
               href={cat.path}
               className={`category-chip ${isActive ? 'active' : ''}`}
             >
               {cat.label}
-            </Link>
+            </a>
           );
         })}
       </div>

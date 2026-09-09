@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
 import { ShieldAlert, ShieldCheck, Lock, AlertTriangle, Eye, Terminal, ArrowRight, CheckCircle2, Bug, Radio, Zap } from 'lucide-react';
 
 export function LandingSections() {
@@ -150,12 +149,12 @@ export function LandingSections() {
             Gain immediate enterprise trials, RFP inclusion, and trust from security leaders protecting critical systems.
           </p>
           <div className="launch-cta-buttons">
-            <Link href="/submit" className="launch-cta-primary">
+            <a href="/submit" className="launch-cta-primary">
               Submit SecOps Tool <ArrowRight size={15} />
-            </Link>
-            <Link href="/category/security" className="launch-cta-secondary">
+            </a>
+            <a href="/category/security" className="launch-cta-secondary">
               Browse Threat Stacks
-            </Link>
+            </a>
           </div>
         </div>
       </section>

@@ -1,18 +1,15 @@
 'use client';
 
 import React from 'react';
-import { useRouter } from 'next/navigation';
 import { ExternalLink, ChevronUp, Clock } from 'lucide-react';
 import type { Product } from '@/lib/ads';
 import { SafeImage } from '@/components/SafeImage';
 
 export function ProductCard({ product }: { product: Product }) {
-  const router = useRouter();
-
   const handleCardClick = (e: React.MouseEvent) => {
     const target = e.target as HTMLElement;
     if (target.closest('a') || target.closest('button')) return;
-    router.push(`/product/${encodeURIComponent(product.id)}`);
+    window.location.href = `/product/${encodeURIComponent(product.id)}`;
   };
 
   const formattedDate = product.launchedAt
@@ -42,7 +39,7 @@ export function ProductCard({ product }: { product: Product }) {
               onClick={(e) => e.stopPropagation()}
             >
               {product.title}
-              <ExternalLink size={14} style={{ color: 'var(--text-muted)' }} />
+              <ExternalLink size={14} style={{ color: 'var(--text-muted, var(--color-muted, #888))' }} />
             </a>
             {product.category && <span className="category-badge">{product.category}</span>}
           </div>
