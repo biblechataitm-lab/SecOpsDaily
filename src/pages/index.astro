@@ -1,16 +1,18 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import { HeroSection } from '@/components/HeroSection';
-import { LandingSections } from '@/components/LandingSections';
+import { HeroLanding } from '@/components/landing/HeroLanding';
+import { StatsSection } from '@/components/landing/StatsSection';
+import { FeaturesSection } from '@/components/landing/FeaturesSection';
+import { CTASection } from '@/components/landing/CTASection';
 
 export const prerender = true;
 ---
 
-<Layout>
-  <div class="w-full">
-    <HeroSection client:load />
-    <div class="container">
-      <LandingSections client:visible />
-    </div>
+<Layout title="SecOpsDaily — Security Operations Intelligence" description="Discover 1,100+ cybersecurity tools — from SIEM platforms and threat intel to pentesting frameworks, zero-trust solutions, and compliance automation.">
+  <div class="sod-landing">
+    <HeroLanding client:load />
+    <StatsSection client:visible />
+    <FeaturesSection client:visible />
+    <CTASection client:visible />
   </div>
 </Layout>
