@@ -1685,3 +1685,255 @@ a {
   gap: 16px;
   min-width: 0;
 }
+
+
+
+/* ==========================================================================
+   SECOPSDAILY — Cyber Threat Defense & Security Tooling Styles
+   ========================================================================== */
+.theme-secops {
+  background-color: #06070a;
+  color: #f8fafc;
+}
+.secops-navbar {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 48px);
+  max-width: 1200px;
+  z-index: 1000;
+  background: rgba(15, 18, 26, 0.92);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 9999px;
+  padding: 10px 24px;
+}
+.secops-nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.secops-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 18px;
+  color: #f8fafc;
+  text-decoration: none;
+}
+.secops-shield-glyph {
+  font-size: 20px;
+}
+.secops-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 14px;
+}
+.secops-nav-links a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.15s;
+}
+.secops-nav-links a:hover {
+  color: #ef4444;
+}
+.secops-cta-btn {
+  background: #dc2626;
+  color: #ffffff;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s;
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.3);
+}
+.secops-cta-btn:hover {
+  background: #b91c1c;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+}
+
+.secops-hero {
+  padding: 140px 0 70px;
+  border-bottom: 1px solid rgba(239, 68, 68, 0.15);
+}
+.secops-hero-container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+.secops-alert-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  font-size: 11px;
+  font-weight: 700;
+  color: #fca5a5;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+}
+.secops-beacon {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ef4444;
+  box-shadow: 0 0 12px #ef4444;
+  animation: beaconPulse 2s infinite;
+}
+@keyframes beaconPulse {
+  0% { opacity: 0.4; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.2); }
+  100% { opacity: 0.4; transform: scale(0.9); }
+}
+.secops-title {
+  font-size: clamp(34px, 4.5vw, 58px);
+  font-weight: 800;
+  letter-spacing: -1.2px;
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
+.secops-red {
+  color: #ef4444;
+}
+.secops-desc {
+  font-size: 16px;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin: 0 auto 32px;
+  max-width: 680px;
+}
+
+.secops-search {
+  display: flex;
+  align-items: center;
+  background: #0f121a;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 12px;
+  max-width: 580px;
+  margin: 0 auto 36px;
+  padding: 6px 8px 6px 16px;
+}
+.secops-prompt {
+  font-family: ui-monospace, monospace;
+  color: #ef4444;
+  font-weight: 700;
+  margin-right: 8px;
+}
+.secops-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #f8fafc;
+  font-size: 14px;
+  font-family: ui-monospace, monospace;
+  outline: none;
+}
+.secops-btn {
+  background: #dc2626;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.secops-btn:hover {
+  background: #b91c1c;
+}
+
+.secops-threat-hud {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.hud-item {
+  background: #0f121a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-family: ui-monospace, monospace;
+  font-size: 12px;
+  color: #94a3b8;
+}
+.hud-num {
+  font-weight: 800;
+  color: #ef4444;
+  margin-right: 6px;
+}
+.hud-green {
+  font-weight: 800;
+  color: #22c55e;
+  margin-right: 6px;
+}
+
+/* SecOps Features */
+.secops-matrix {
+  padding: 80px 24px;
+}
+.secops-heading {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.secops-red-tag {
+  font-size: 11px;
+  font-weight: 700;
+  color: #ef4444;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 8px;
+}
+.secops-heading h2 {
+  font-size: clamp(28px, 3.5vw, 42px);
+  color: #f8fafc;
+}
+.secops-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+@media (max-width: 900px) {
+  .secops-grid-3 { grid-template-columns: 1fr; }
+}
+.secops-card {
+  background: #0f121a;
+  border: 1px solid rgba(239, 68, 68, 0.15);
+  border-radius: 16px;
+  padding: 32px 24px;
+  transition: all 0.2s;
+}
+.secops-card:hover {
+  border-color: rgba(239, 68, 68, 0.4);
+  transform: translateY(-3px);
+}
+.secops-tag {
+  font-size: 11px;
+  font-weight: 800;
+  color: #ef4444;
+  letter-spacing: 1.5px;
+  display: block;
+  margin-bottom: 12px;
+  font-family: ui-monospace, monospace;
+}
+.secops-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #f8fafc;
+  margin-bottom: 10px;
+}
+.secops-card p {
+  font-size: 14px;
+  color: #94a3b8;
+  line-height: 1.6;
+}
