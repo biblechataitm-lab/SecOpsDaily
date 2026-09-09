@@ -1,66 +1,32 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
-import { Search, ArrowRight, TrendingUp } from 'lucide-react';
+import React from 'react';
 
 export function HeroLanding() {
-  const heroRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const hero = heroRef.current;
-    if (!hero) return;
-    const children = hero.querySelectorAll('.sod-animate');
-    children.forEach((el, i) => {
-      const htmlEl = el as HTMLElement;
-      htmlEl.style.opacity = '0';
-      htmlEl.style.transform = 'translateY(24px)';
-      setTimeout(() => {
-        htmlEl.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        htmlEl.style.opacity = '1';
-        htmlEl.style.transform = 'translateY(0)';
-      }, 100 + i * 100);
-    });
-  }, []);
-
   return (
-    <section ref={heroRef} className="sod-hero">
-      <div className="sod-hero-bg" aria-hidden="true" />
-      <div className="sod-hero-container">
-        <div className="sod-hero-content">
-          <div className="sod-animate sod-hero-badge">
-            <span>Security Operations Intelligence</span>
-          </div>
-          <h1 className="sod-animate sod-hero-title">
-            Secure Your Stack with{' '}
-            <span className="sod-accent-text">Trusted Security Tools</span>
-          </h1>
-          <p className="sod-animate sod-hero-subtitle">
-            Discover 1,100+ cybersecurity tools — from SIEM platforms and threat intel to pentesting frameworks, zero-trust solutions, and compliance automation.
-          </p>
-          <form
-            className="sod-animate sod-hero-search"
-            onSubmit={(e) => {
-              e.preventDefault();
-              const input = e.currentTarget.querySelector('input');
-              if (input?.value.trim()) {
-                window.location.href = `/search?q=${encodeURIComponent(input.value.trim())}`;
-              }
-            }}
-          >
-            <Search size={16} className="sod-hero-search-icon" />
-            <input type="text" placeholder="Search security tools, SIEM..." />
-            <button type="submit">Explore <ArrowRight size={14} /></button>
-          </form>
-          <div className="sod-animate sod-hero-tags">
-            <a href="/category/ai" className="sod-tag">AI Security</a>
-            <a href="/category/developer-tools" className="sod-tag">DevSecOps</a>
-            <a href="/category/productivity" className="sod-tag">Compliance</a>
-            <a href="/trends" className="sod-tag sod-tag-hot">
-              <TrendingUp size={12} /> Trending
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
+    <section class="secops-hero">
+  <div class="secops-hero-container container">
+    <div class="secops-alert-banner">
+      <span class="secops-beacon"></span>
+      <span>DEFCON LEVEL: NOMINAL · ZERO-DAY DEFENSE NETWORK</span>
+    </div>
+    <h1 class="secops-title">
+      Frontline Defense for <span class="secops-red">Cyber Security</span>
+    </h1>
+    <p class="secops-desc">
+      Vetting container scanners, secret detection engines, zero-trust mesh VPNs, and offensive security tooling.
+    </p>
+    <div class="secops-search">
+      <span class="secops-prompt">#secops&gt;</span>
+      <input type="text" placeholder="scan --cve --secrets --cloud" class="secops-input" />
+      <button class="secops-btn">Execute Audit</button>
+    </div>
+    <div class="secops-threat-hud">
+      <div class="hud-item"><span class="hud-num">0</span> UNPATCHED CVEs</div>
+      <div class="hud-item"><span class="hud-num">24,800+</span> REPOS SCANNED</div>
+      <div class="hud-item"><span class="hud-green">100%</span> SUPPLY CHAIN INTEGRITY</div>
+    </div>
+  </div>
+</section>
   );
 }

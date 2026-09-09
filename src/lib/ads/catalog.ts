@@ -4,30 +4,132 @@ import { request, mockMode } from './client';
 const MOCK_PRODUCTS: Product[] = [
   {
     "id": "sec-1",
-    "title": "SentinelGuard X",
-    "tagline": "Autonomous runtime eBPF security daemon with real-time zero-day mitigation",
-    "description": "Kernel-level intrusion detection and container runtime enforcement designed for Kubernetes clusters.",
-    "logo": "https://placehold.co/96x96/0b1120/ef4444?text=SG",
-    "link": "https://example.com/sentinelguard",
-    "category": "Threat Intel & SIEM",
+    "title": "Trivy Scanner",
+    "tagline": "Comprehensive security scanner for container images, file systems, Git repos, and cloud configs",
+    "link": "https://trivy.dev",
+    "category": "CI/CD & DevOps",
+    "upvotes": 510,
     "tags": [
       "security",
-      "ebpf",
-      "kubernetes"
+      "containers",
+      "cve"
     ],
     "techStack": [
-      "C",
-      "Rust",
-      "eBPF",
-      "Go"
+      "Go",
+      "Docker",
+      "Kubernetes"
     ],
-    "coverImages": [],
-    "upvotes": 528,
-    "launchedAt": "2026-08-19T05:12:33.188Z",
     "maker": {
-      "name": "Viktor Kane",
-      "username": "vkane",
-      "avatar": "https://placehold.co/64x64/151e32/ef4444?text=V"
+      "name": "Aqua Security",
+      "avatar": "https://placehold.co/64x64/ef4444/ffffff?text=TV"
+    }
+  },
+  {
+    "id": "sec-2",
+    "title": "Gitleaks",
+    "tagline": "Fast secret detector that audits git repositories for hardcoded API keys, passwords, and private tokens",
+    "link": "https://gitleaks.io",
+    "category": "Developer Tools",
+    "upvotes": 470,
+    "tags": [
+      "secrets",
+      "git",
+      "cli"
+    ],
+    "techStack": [
+      "Go",
+      "Regex"
+    ],
+    "maker": {
+      "name": "Zachary Rice",
+      "avatar": "https://placehold.co/64x64/f59e0b/ffffff?text=GL"
+    }
+  },
+  {
+    "id": "sec-3",
+    "title": "Wiz Cloud",
+    "tagline": "Agentless cloud security platform that correlates risks across compute, network, identity, and data",
+    "link": "https://wiz.io",
+    "category": "Automation",
+    "upvotes": 420,
+    "tags": [
+      "cloud-security",
+      "cspm",
+      "enterprise"
+    ],
+    "techStack": [
+      "Cloud",
+      "Graph DB"
+    ],
+    "maker": {
+      "name": "Assaf Rappaport",
+      "avatar": "https://placehold.co/64x64/3b82f6/ffffff?text=WZ"
+    }
+  },
+  {
+    "id": "sec-4",
+    "title": "Snyk Code",
+    "tagline": "Developer-first static code analysis (SAST) and open source dependency vulnerability scanning",
+    "link": "https://snyk.io",
+    "category": "Developer Tools",
+    "upvotes": 390,
+    "tags": [
+      "sast",
+      "sca",
+      "devsecops"
+    ],
+    "techStack": [
+      "TypeScript",
+      "Java",
+      "AI"
+    ],
+    "maker": {
+      "name": "Guy Podjarny",
+      "avatar": "https://placehold.co/64x64/10b981/ffffff?text=SN"
+    }
+  },
+  {
+    "id": "sec-5",
+    "title": "Tailscale",
+    "tagline": "Zero-config mesh VPN built on WireGuard that creates secure encrypted point-to-point networks",
+    "link": "https://tailscale.com",
+    "category": "CI/CD & DevOps",
+    "upvotes": 380,
+    "tags": [
+      "vpn",
+      "wireguard",
+      "networking"
+    ],
+    "techStack": [
+      "Go",
+      "WireGuard",
+      "Rust"
+    ],
+    "maker": {
+      "name": "Avery Pennarun",
+      "avatar": "https://placehold.co/64x64/a78bfa/ffffff?text=TS"
+    }
+  },
+  {
+    "id": "sec-6",
+    "title": "1Password Dev",
+    "tagline": "Developer tools to manage secrets, SSH keys, biometric Git commits, and service accounts securely",
+    "link": "https://developer.1password.com",
+    "category": "Productivity",
+    "upvotes": 350,
+    "tags": [
+      "secrets",
+      "ssh",
+      "vault"
+    ],
+    "techStack": [
+      "Rust",
+      "Swift",
+      "Electron"
+    ],
+    "maker": {
+      "name": "1Password Team",
+      "avatar": "https://placehold.co/64x64/ec4899/ffffff?text=1P"
     }
   }
 ];
