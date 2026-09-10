@@ -1803,6 +1803,7 @@ a {
 }
 .secops-red {
   color: #ef4444;
+  text-shadow: 0 0 16px rgba(239, 68, 68, 0.4);
 }
 .secops-desc {
   font-size: 16px;
@@ -1812,75 +1813,350 @@ a {
   max-width: 680px;
 }
 
+/* Tactical Hero & Canvas Grid */
+.secops-hero {
+  position: relative;
+  padding: 64px 0 48px;
+  background-color: #050811;
+  background-image: 
+    linear-gradient(rgba(239, 68, 68, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(239, 68, 68, 0.04) 1px, transparent 1px),
+    radial-gradient(circle at 50% 15%, rgba(239, 68, 68, 0.12) 0%, transparent 60%);
+  background-size: 40px 40px, 40px 40px, 100% 100%;
+  border-bottom: 1px solid rgba(239, 68, 68, 0.15);
+}
+
+.secops-hero-container {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.secops-tactical-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.secops-alert-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: #fca5a5;
+  letter-spacing: 1px;
+}
+
+.secops-beacon {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ef4444;
+  box-shadow: 0 0 10px #ef4444;
+  animation: beaconPulse 1.5s infinite;
+}
+
+@keyframes beaconPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.secops-telemetry-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #64748b;
+  letter-spacing: 1px;
+}
+
 .secops-search {
   display: flex;
   align-items: center;
-  background: #0f121a;
-  border: 1px solid rgba(239, 68, 68, 0.3);
-  border-radius: 12px;
-  max-width: 580px;
+  background: #0a0f1d;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  border-radius: 6px;
+  max-width: 600px;
   margin: 0 auto 36px;
   padding: 6px 8px 6px 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), inset 0 0 12px rgba(239, 68, 68, 0.05);
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
+
+.secops-search:focus-within {
+  border-color: #ef4444;
+  box-shadow: 0 0 16px rgba(239, 68, 68, 0.3);
+}
+
 .secops-prompt {
-  font-family: ui-monospace, monospace;
+  font-family: var(--font-mono);
   color: #ef4444;
+  font-size: 13px;
   font-weight: 700;
-  margin-right: 8px;
+  margin-right: 10px;
 }
+
 .secops-input {
   flex: 1;
   background: transparent;
   border: none;
   color: #f8fafc;
   font-size: 14px;
-  font-family: ui-monospace, monospace;
+  font-family: var(--font-mono);
   outline: none;
 }
-.secops-btn {
-  background: #dc2626;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 18px;
-  font-size: 13px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background 0.15s;
+
+.secops-input::placeholder {
+  color: #475569;
 }
+
+.secops-btn {
+  background: #ef4444;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 18px;
+  font-size: 12px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
+
 .secops-btn:hover {
-  background: #b91c1c;
+  background: #dc2626;
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.5);
+  transform: translateY(-1px);
 }
 
 .secops-threat-hud {
   display: flex;
   justify-content: center;
-  gap: 24px;
+  gap: 16px;
   flex-wrap: wrap;
 }
+
 .hud-item {
-  background: #0f121a;
+  background: #0a0f1d;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 10px;
-  padding: 10px 18px;
-  font-family: ui-monospace, monospace;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-family: var(--font-mono);
   font-size: 12px;
   color: #94a3b8;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
+
+.hud-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+.hud-indicator-red { background: #ef4444; box-shadow: 0 0 6px #ef4444; }
+.hud-indicator-yellow { background: #f59e0b; box-shadow: 0 0 6px #f59e0b; }
+.hud-indicator-green { background: #22c55e; box-shadow: 0 0 6px #22c55e; }
+
 .hud-num {
   font-weight: 800;
   color: #ef4444;
-  margin-right: 6px;
 }
 .hud-green {
   font-weight: 800;
   color: #22c55e;
-  margin-right: 6px;
 }
 
-/* SecOps Features */
+.hud-item-status {
+  border-color: rgba(34, 197, 94, 0.3);
+  color: #86efac;
+}
+
+.hud-pulse-ring {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22c55e;
+  animation: beaconPulse 1s infinite;
+}
+
+/* Tactical Navbar */
+.secops-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(5, 8, 17, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.secops-nav-inner {
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.secops-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 20px;
+  color: #f8fafc;
+  letter-spacing: 0.5px;
+}
+
+.secops-badge-chip {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: #f87171;
+  border-radius: 3px;
+  letter-spacing: 1px;
+}
+
+.secops-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+@media (max-width: 840px) {
+  .secops-nav-links { display: none; }
+}
+
+.secops-nav-item {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: #94a3b8;
+  letter-spacing: 0.5px;
+  transition: color 0.15s;
+}
+
+.secops-nav-item:hover, .secops-nav-item.active {
+  color: #f8fafc;
+}
+
+.secops-nav-highlight {
+  color: #ef4444;
+}
+
+.secops-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.secops-status-telemetry {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #4ade80;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.secops-radar-pulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px #22c55e;
+  animation: beaconPulse 1s infinite;
+}
+
+.secops-cta-btn {
+  background: linear-gradient(180deg, #ef4444, #b91c1c);
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #f87171;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.35);
+  transition: all 0.2s;
+}
+
+.secops-cta-btn:hover {
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.6);
+  transform: translateY(-1px);
+}
+
+/* Category Chips Tactical Styling */
+.category-chips-wrapper {
+  margin-bottom: 24px;
+}
+
+.category-chips-scroll {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scrollbar-width: none;
+}
+
+.category-chips-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.chip {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 4px;
+  background: #0a0f1d;
+  color: #94a3b8;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+
+.chip:hover {
+  color: #f8fafc;
+  border-color: rgba(239, 68, 68, 0.4);
+  background: #101628;
+}
+
+.chip-active {
+  background: rgba(239, 68, 68, 0.15) !important;
+  color: #fca5a5 !important;
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.25);
+}
+
+/* SecOps Features Section */
 .secops-matrix {
   padding: 80px 24px;
+  background: #060913;
+  border-top: 1px solid rgba(239, 68, 68, 0.15);
 }
 .secops-heading {
   text-align: center;
@@ -1893,10 +2169,12 @@ a {
   letter-spacing: 2px;
   display: block;
   margin-bottom: 8px;
+  font-family: var(--font-mono);
 }
 .secops-heading h2 {
   font-size: clamp(28px, 3.5vw, 42px);
   color: #f8fafc;
+  font-family: var(--font-display);
 }
 .secops-grid-3 {
   display: grid;
@@ -1907,14 +2185,16 @@ a {
   .secops-grid-3 { grid-template-columns: 1fr; }
 }
 .secops-card {
-  background: #0f121a;
+  background: #0a0f1d;
   border: 1px solid rgba(239, 68, 68, 0.15);
-  border-radius: 16px;
+  border-radius: 6px;
   padding: 32px 24px;
   transition: all 0.2s;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 .secops-card:hover {
-  border-color: rgba(239, 68, 68, 0.4);
+  border-color: rgba(239, 68, 68, 0.5);
+  box-shadow: 0 8px 24px rgba(239, 68, 68, 0.12);
   transform: translateY(-3px);
 }
 .secops-tag {
@@ -1924,16 +2204,189 @@ a {
   letter-spacing: 1.5px;
   display: block;
   margin-bottom: 12px;
-  font-family: ui-monospace, monospace;
+  font-family: var(--font-mono);
 }
 .secops-card h3 {
   font-size: 18px;
   font-weight: 700;
   color: #f8fafc;
   margin-bottom: 10px;
+  font-family: var(--font-display);
 }
 .secops-card p {
   font-size: 14px;
   color: #94a3b8;
   line-height: 1.6;
 }
+
+
+
+/* Responsive Stats Grid Rules */
+@media (max-width: 1024px) {
+  [class*="-stats-grid"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+  }
+}
+
+@media (max-width: 540px) {
+  [class*="-stats-grid"] {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+}
+
+[class*="-stat-value"] {
+  font-size: clamp(20px, 2.4vw, 28px) !important;
+  white-space: nowrap !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* ==========================================================================
+   UNIVERSAL MOBILE & TABLET RESPONSIVE AUDIT RULES
+   ========================================================================== */
+
+/* Prevent horizontal window blowouts */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  position: relative;
+}
+
+/* Mobile container padding */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+/* Two-column layout collapses to single column on tablet/mobile */
+@media (max-width: 900px) {
+  .main-layout {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+    padding-top: 24px !important;
+  }
+}
+
+/* Product Cards mobile compactness */
+@media (max-width: 640px) {
+  .product-card {
+    padding: 14px !important;
+    gap: 12px !important;
+  }
+  .product-logo {
+    width: 48px !important;
+    height: 48px !important;
+  }
+  .product-title {
+    font-size: 16px !important;
+  }
+  .product-tagline {
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+  }
+}
+
+/* Stats Section: 4 cols on desktop, 2 cols on tablet, 1 col on mobile */
+@media (max-width: 1024px) {
+  .sod-stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+  }
+}
+
+@media (max-width: 540px) {
+  .sod-stats-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+[class*="-stat-value"] {
+  font-size: clamp(20px, 2.4vw, 28px) !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  max-width: 100% !important;
+}
+
+[class*="-stat-card"] {
+  padding: 22px 14px !important;
+  min-height: 110px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+}
+
+/* CTA Section mobile wrapping */
+@media (max-width: 640px) {
+  [class*="-cta"] {
+    padding: 60px 16px !important;
+  }
+  [class*="-cta-title"] {
+    font-size: clamp(24px, 6vw, 32px) !important;
+  }
+  [class*="-cta-buttons"] {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 10px !important;
+  }
+  [class*="-cta-btn"] {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 12px 16px !important;
+  }
+}
+
+/* Footer mobile layout */
+@media (max-width: 820px) {
+  [class*="-footer-top"] {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+}
+@media (max-width: 560px) {
+  [class*="-footer-links-grid"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 24px !important;
+  }
+}
+@media (max-width: 380px) {
+  [class*="-footer-links-grid"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
+      @media (max-width: 860px) {
+        .secops-nav-links { display: none !important; }
+      }
+      @media (max-width: 640px) {
+        .secops-status-telemetry, .secops-badge-chip { display: none !important; }
+      }
+      .secops-threat-hud {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 12px !important;
+        justify-content: center !important;
+      }
+      @media (max-width: 520px) {
+        .secops-search {
+          flex-direction: column !important;
+          gap: 8px !important;
+        }
+        .secops-prompt { display: none !important; }
+        .secops-input, .secops-btn {
+          width: 100% !important;
+          height: 44px !important;
+        }
+      }
+    

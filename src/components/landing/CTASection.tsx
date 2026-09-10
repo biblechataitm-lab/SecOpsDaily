@@ -9,7 +9,7 @@ export function CTASection() {
       <div className="sod-cta-glow" aria-hidden="true" />
       <div className="sod-cta-content">
         <h2 className="sod-cta-title">Submit Your Security Tool</h2>
-        <p className="sod-cta-subtitle">Get discovered by 12K+ CISOs, security engineers, and SOC analysts.</p>
+        <p className="sod-cta-subtitle">Get discovered by CISOs, security engineers, and SOC analysts.</p>
         <div className="sod-cta-buttons">
           <a href="/submit" className="sod-cta-btn-primary">
             <Rocket size={15} /> Submit Product

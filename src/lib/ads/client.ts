@@ -7,8 +7,8 @@ export function readEnv(caller: string): { base: string; key: string } | null {
     throw new BrowserCallError(`[ads] ${caller}() is server-only — it reads a secret API key.`);
   }
 
-  const base = process.env.PEERLIST_ADS_URL?.replace(/\/$/, '');
-  const key = process.env.PEERLIST_ADS_KEY;
+  const base = (process.env.PEERLIST_ADS_URL || (import.meta as any).env?.PEERLIST_ADS_URL)?.replace(/\/$/, '');
+  const key = process.env.PEERLIST_ADS_KEY || (import.meta as any).env?.PEERLIST_ADS_KEY;
 
   if (!base || !key) {
     console.warn(`[ads] PEERLIST_ADS_URL or PEERLIST_ADS_KEY is not set; ${caller}() returned nothing.`);
@@ -19,7 +19,7 @@ export function readEnv(caller: string): { base: string; key: string } | null {
 }
 
 export function mockMode(): '1' | 'empty' | null {
-  const mock = process.env.PEERLIST_ADS_MOCK;
+  const mock = process.env.PEERLIST_ADS_MOCK || (import.meta as any).env?.PEERLIST_ADS_MOCK;
   if (!mock || mock === '0') return null;
   return mock === 'empty' ? 'empty' : '1';
 }

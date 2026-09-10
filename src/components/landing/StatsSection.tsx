@@ -3,10 +3,10 @@
 import React from 'react';
 
 const STATS = [
-  { value: '1,100+', label: 'Security Tools' },
-  { value: '12K+', label: 'Security Pros' },
-  { value: '200+', label: 'Threat Feeds' },
-  { value: '99.2%', label: 'Accuracy Rate' },
+  { value: '100%', label: 'Direct Maker Submissions' },
+  { value: 'Realtime', label: 'Verified Catalog Releases' },
+  { value: 'Community', label: 'Upvote & Feedback Engine' },
+  { value: 'Zero Tracking', label: 'Privacy First Directory' },
 ];
 
 export function StatsSection() {
